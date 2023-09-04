@@ -8,4 +8,4 @@ int num1 = int.Parse(Console.ReadLine()??"0");
 Console.WriteLine("Напишите второе число");
 int num2 = int.Parse(Console.ReadLine()??"0");
 
-// Console.WriteLine(num1==Math.Pow(num2,2)?"да":"нет"); - не работает, разобрать почему
+Console.WriteLine(num2==Math.Pow(num1,2)?"да":"нет");
