@@ -14,12 +14,13 @@ int[] GenArr(int len)
 {
     int[] arr = new int[len];
     Random rnd = new Random();
-    for(int i = 0; i<0; i++)
+    for(int i = 0; i<len; i++)
     {
-        arr[i] = rnd.Next(0, 2); //присваевает только 0!!!!
+        arr[i] = rnd.Next(0, 2);
     }
     return arr;
 }
+
 void PrintArr(int[] arr)
 {
     Console.Write("[");
