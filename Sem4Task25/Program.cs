@@ -17,23 +17,11 @@ void PrintResult(string msg)
 long Calculator(int firstNum, int secondNum, string mathOperation)
 {
     long result = 0;
-    if(mathOperation == "+")
-    {
-        result = mySum(firstNum, secondNum);
-    }
+    if(mathOperation == "+")    {result = mySum(firstNum, secondNum);}
 
-    else if (mathOperation == "-")
-    {
-    result = myMinus(firstNum, secondNum); 
-    }
-    else if(mathOperation == "*")
-    {
-        result = myMultiplication(firstNum, secondNum);
-    }
-    else if(mathOperation == "^")
-    {
-    result = MyPow(firstNum, secondNum);
-    }
+    else if (mathOperation == "-")    {result = myMinus(firstNum, secondNum);}
+    else if(mathOperation == "*")   {result = myMultiplication(firstNum, secondNum);}
+    else if(mathOperation == "^")    {    result = MyPow(firstNum, secondNum);    }
     return result;
 }
 
