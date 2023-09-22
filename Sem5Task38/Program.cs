@@ -4,10 +4,7 @@
 //  а затем найдите разницу между первым и последним элементом.
 //  Для задачи со звездочкой использовать заполнение массива целыми числами
 
-
-
 // Не доделана!!!!!!!!!!!!!!!!!!!!
-
 
 //====================Методы==========================
 double[] GenArray(int num, double lowBorder, double highBorder)
@@ -99,18 +96,35 @@ int[] CountSort(int[] array, int lowLimit, int upLimit)
    }
    return array;
 }
-
+// Сортировка вставкой
+int[] InsertSort(int[] array)
+{
+    for(int i=1; i<array.Length; i++)
+    {
+        int key = array[i];
+        int j = i;
+        while((j>1)&&(array[j-1]>key))
+        {
+            int temp = array[j-1];
+            array[j-1]= array[j];
+            array[j]=temp;
+            j--;
+        }
+        array[j]=key;
+    }
+    return array;
+}
 //===================Программа================
-// int arrayLen = ReadData("Укажите длинну массива");
-// double lowBorder =ReadData("Укажите нижнюю границу массива");
-// double highBorder =ReadData("Укажите верхнюю границу массива");
-// double[] array = GenArray(arrayLen, lowBorder, highBorder);
-// PrintArray(array);
-// double dif = MaxNum(array)-MinNum(array);
-// Console.WriteLine($"Разница между максимальным и минимальным значения: {dif}");
+int arrayLen = ReadData("Укажите длинну массива");
+double lowBorder =ReadData("Укажите нижнюю границу массива");
+double highBorder =ReadData("Укажите верхнюю границу массива");
+double[] array = GenArray(arrayLen, lowBorder, highBorder);
+PrintArray(array);
+double dif = MaxNum(array)-MinNum(array);
+Console.WriteLine($"Разница между максимальным и минимальным значения: {dif}");
 
 Console.WriteLine("Task 38*");
-int arrayLen = ReadData("Укажите длинну массива");
+arrayLen = ReadData("Укажите длинну массива");
 int lowBorderInt =ReadData("Укажите нижнюю границу массива");
 int highBorderInt =ReadData("Укажите верхнюю границу массива");
 int[] arrayInt = GenArrayInt(arrayLen, lowBorderInt, highBorderInt);
@@ -118,3 +132,6 @@ PrintArrayInt(arrayInt);
 int[] sortedArray = CountSort(arrayInt, lowBorderInt, highBorderInt);
 Console.WriteLine("Сортировка подсчетом");
 PrintArrayInt(sortedArray);
+Console.WriteLine("Сортировка вставкой");
+int[] sortedArrayInsert= InsertSort(arrayInt);
+PrintArrayInt(sortedArrayInsert);
